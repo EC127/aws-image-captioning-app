@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <h2>Upload Success</h2>
+
+  <h4>Original Image:</h4>
+  <img src="{{ original_url }}" alt="Original image" style="max-width: 400px;">
+
+  <h4>Thumbnail:</h4>
+  <img src="{{ thumbnail_url }}" alt="Thumbnail image" style="max-width: 200px;">
+
+  <h4>Caption:</h4>
+  <p>{{ caption }}</p>
+
+  <a href="{{ url_for('upload_form') }}">Upload another image</a> |
+  <a href="{{ url_for('gallery') }}">View Gallery</a>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <h2>Image Gallery</h2>
+
+  {% if images %}
+    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+      {% for image in images %}
+        <div style="border: 1px solid #ccc; padding: 10px; width: 300px;">
+          <h4>{{ image.filename }}</h4>
+          <p><strong>Caption:</strong> {{ image.caption }}</p>
+
+          <div>
+            <p>Original:</p>
+            <img src="{{ image.original_url }}" alt="Original image" style="max-width: 250px;">
+          </div>
+
+          <div>
+            <p>Thumbnail:</p>
+            <img src="{{ image.thumbnail_url }}" alt="Thumbnail image" style="max-width: 150px;">
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No images found.</p>
+  {% endif %}
+
+  <a href="{{ url_for('upload_form') }}">Upload another image</a>
+{% endblock %}
