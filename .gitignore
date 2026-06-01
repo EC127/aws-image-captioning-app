@@ -1,0 +1,38 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.env/
+.venv/
+
+# Environment variables and secrets
+.env
+*.env
+credentials.json
+config.json
+
+# AWS / cloud credentials
+.aws/
+*.pem
+*.key
+*.crt
+
+# Lambda/package build files
+*.zip
+package/
+build/
+dist/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE/editor files
+.vscode/
+.idea/
